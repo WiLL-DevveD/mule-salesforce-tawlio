@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:slack="http://www.mulesoft.org/schema/mule/slack" xmlns:salesforce="http://www.mulesoft.org/schema/mule/salesforce"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/salesforce http://www.mulesoft.org/schema/mule/salesforce/current/mule-salesforce.xsd
+http://www.mulesoft.org/schema/mule/slack http://www.mulesoft.org/schema/mule/slack/current/mule-slack.xsd">
+	<flow name="salesforce-to-twilidFlow" doc:id="3b850aa2-a4b8-44ee-9eb1-bf07f7d7149d" >
+		<salesforce:subscribe-topic-listener doc:name="Subscribe topic listener" doc:id="652e7588-1fb9-4e3b-9151-d53a6a984fa7" config-ref="Salesforce_Config" topic="successOp"/>
+		<set-payload value="#[payload]" doc:name="Set Payload" doc:id="b9b3611d-47c1-4f4a-bc4d-a78c19e85c6e" />
+		<logger level="INFO" doc:name="Logger" doc:id="26149512-e1f1-430d-b938-36e9d5a2d0a9" message="#[payload]"/>
+	</flow>
+</mule>

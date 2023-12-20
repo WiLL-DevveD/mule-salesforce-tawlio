@@ -1,4 +1,4 @@
-name: Build and Deploy to Sandbox
+name: Build and Deploy to Sandbox 01
 
 on:
   push:
@@ -63,4 +63,4 @@ jobs:
         mvn deploy -DmuleDeploy \
          -Dmule.artifact=$artifactName \
          -Danypoint.username="$USERNAME" \
-         -Danypoint.password="$PASSWORD" 
+         -Danypoint.password="$PASSWORD"  

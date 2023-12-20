@@ -57,7 +57,7 @@ jobs:
     - name: Deploy to Sandbox
       env:
         USERNAME: ${{ secrets.anypoint_platform_username }}
-        PASSWORD: ${{ secrets.anypoint_platform_pwd }}
+        PASSWORD: ${{ secrets.anypoint_platform_password }}
       run: |
         artifactName=$(ls *.jar | head -1)
         mvn deploy -DmuleDeploy \
